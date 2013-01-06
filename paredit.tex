@@ -4,6 +4,9 @@
 \usepackage[landscape,a3paper,margin=1cm]{geometry}
 \usepackage{multicol}
 \usepackage[compact]{titlesec}
+\usepackage{courier}
+\usepackage{color}
+\usepackage[usenames]{xcolor}
 
 \title{Paredit Cheatsheet}
 
@@ -14,11 +17,44 @@
 
 \begin{document}
 
+  \newcommand{\cursor}{\texttt{\textcolor{red}{\textbf{|}}}}
+
   \begin{multicols}{4}
 
     \section*{\LARGE{Paredit Cheatsheet}}
 
     \section*{Basic Insertion Commands}
+
+paredit-open-round \texttt{(}
+
+\ttfamily
+(a b \cursor c d)\\
+(a b (\cursor) c d)
+
+(foo "bar \cursor baz" quux)\\
+(foo "bar (\cursor baz" quux)
+\rmfamily
+
+paredit-close-round \texttt{)}
+
+\ttfamily
+(a b \cursor c \space\space)\\
+(a b c)\cursor
+
+; Hello,\cursor{} world\\
+; Hello,)\cursor{} world
+\rmfamily
+
+paredit-close-round-and-newline \texttt{M-)}
+
+\ttfamily
+(defun f (x\cursor{} \space))\\
+(defun f (x\cursor{} \space)\\
+)
+
+; (Foo.\cursor\\
+; (Foo.\cursor
+\rmfamily
 
     \section*{Deleting \& Killing}
 
