@@ -56,6 +56,60 @@ paredit-close-round-and-newline \texttt{M-)}
 ; (Foo.\cursor
 \rmfamily
 
+paredit-open-square \texttt{[}
+
+\ttfamily
+(a b \cursor c d)\\
+(a b [\cursor] c d)
+
+(foo "bar \cursor baz" quux)\\
+(foo "bar [\cursor baz" quux)
+\rmfamily
+
+paredit-close-square \texttt{]}
+
+\ttfamily
+(define-key keymap [frob\cursor{} \space] 'frobnicate)\\
+(define-key keymap [frob]\cursor{} 'frobnicate)
+
+; [Bar.\cursor\\
+; [Bar.]\cursor
+\rmfamily
+
+paredit-doublequote \texttt{"}
+
+\ttfamily
+(frob grovel \cursor full lexical)\\
+(frob grovel "\cursor " full lexical)
+
+(foo "bar \cursor baz" quux)\\
+(foo "bar \textbackslash"\cursor baz" quux)
+\rmfamily
+
+paredit-meta-doublequote \texttt{M-"}
+
+\ttfamily
+(foo "bar \cursor baz" quux)\\
+(foo "bar baz"\\
+\hspace*{3em}\cursor quux)
+
+(foo \cursor(bar \#\textbackslash x "baz \textbackslash\textbackslash{} quux") zot)\\
+(foo "\cursor(bar \#\textbackslash\textbackslash x \textbackslash"baz \textbackslash\textbackslash\textbackslash\textbackslash{} quux\textbackslash")" zot)
+\rmfamily
+
+paredit-backslash \texttt{\textbackslash}
+
+\ttfamily
+(string \#\cursor)\\
+Escaping character... (x)\\
+(string \#\textbackslash x\cursor)
+
+"foo\cursor bar"\\
+Escaping character... (")\\
+"foo\textbackslash"\cursor bar"
+\rmfamily
+
+
     \section*{Deleting \& Killing}
 
     \section*{Movement \& Navigation}
