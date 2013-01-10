@@ -7,7 +7,7 @@
 %
 % http://www.emacswiki.org/FDL
 
-\documentclass[landscape,a4paper]{article}
+\documentclass[landscape,a3paper]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[landscape,a3paper,margin=1cm]{geometry}
@@ -232,6 +232,26 @@ paredit-forward-kill-word \texttt{M-d}
 \rmfamily
 
     \section*{Movement \& Navigation}
+
+paredit-forward \texttt{C-M-f}
+
+\ttfamily
+(foo \cursor(bar baz) quux)\\
+(foo (bar baz)\cursor{} quux)
+
+(foo (bar)\cursor)\\
+(foo (bar))\cursor
+\rmfamily
+
+paredit-backward \texttt{C-M-b}
+
+\ttfamily
+(foo (bar baz)\cursor{} quux)\\
+(foo \cursor(bar baz) quux)
+
+(\cursor(foo) bar)\\
+\cursor((foo) bar)
+\rmfamily
 
     \section*{Depth-Changing Commands}
 
