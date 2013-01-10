@@ -161,6 +161,76 @@ port))
 
     \section*{Deleting \& Killing}
 
+paredit-forward-delete \texttt{C-d, <delete>, <deletechar>}
+
+\ttfamily
+(quu\cursor{}x "zot")\\
+(quu\cursor{} "zot")
+
+(quux \cursor"zot")\\
+(quux "\cursor zot")\\
+(quux "\cursor ot")
+
+(foo (\cursor) bar)\\
+(foo \cursor{} bar)
+
+\cursor(foo bar)\\
+(\cursor foo bar)
+\rmfamily
+
+paredit-backward-delete \texttt{DEL}
+
+\ttfamily
+("zot" q\cursor uux)\\
+("zot" \cursor uux)
+
+("zot"\cursor{} quux)\\
+("zot\cursor" quux)\\
+("zo\cursor" quux)
+
+(foo (\cursor) bar)\\
+(foo \cursor{} bar)
+
+(foo bar)\cursor\\
+(foo bar\cursor)
+\rmfamily
+
+paredit-kill \texttt{C-k}
+
+\ttfamily
+(foo bar)\cursor \space \space \space ; Useless comment!\\
+(foo bar)\cursor
+
+(\cursor foo bar) \space \space \space ; Useful comment!\\
+(\cursor) \space \space \space ; Useful comment!
+
+\cursor(foo bar) \space \space \space ; Useless line!\\
+\cursor
+
+\begin{nstabbing}
+(f\=oo "\cursor bar baz"\\
+\>quux)\\
+(foo "\cursor"\\
+\>quux)
+\end{nstabbing}
+\rmfamily
+
+paredit-forward-kill-word \texttt{M-d}
+
+\ttfamily
+\cursor(foo bar) \space \space \space ; baz\\
+(\cursor{} bar) \space \space \space ; baz\\
+(\cursor) \space \space \space ; baz\\
+() \space \space \space ;\cursor
+
+;;;\cursor{} Frobnicate\\
+(defun frobnicate ...)\\
+;;;\cursor\\
+(defun frobnicate ...)\\
+;;;\\
+(\cursor{} frobnicate ...)
+\rmfamily
+
     \section*{Movement \& Navigation}
 
     \section*{Depth-Changing Commands}
