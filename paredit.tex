@@ -257,6 +257,42 @@ paredit-backward \texttt{C-M-b}
 
     \section*{Depth-Changing Commands}
 
+paredit-wrap-around \texttt{M-(}
+
+\ttfamily
+(foo \cursor bar baz)\\
+(foo (\cursor bar) baz)
+\rmfamily
+
+paredit-splice-sexp \texttt{M-s}
+
+\ttfamily
+(foo (bar\cursor{} baz) quux)\\
+(foo bar\cursor{} baz quux)
+\rmfamily
+
+paredit-splice-sexp-killing-backward \texttt{M-<up>, ESC <up>}
+
+\ttfamily
+(foo (let ((x 5)) \cursor(sqrt n)) bar)\\
+(foo \cursor(sqrt n) bar)
+\rmfamily
+
+paredit-splice-sexp-killing-forward \texttt{M-<down>, ESC <down>}
+
+\ttfamily
+(a (b c\cursor{} d e) f)\\
+(a b c\cursor{} f)
+\rmfamily
+
+paredit-raise-sexp \texttt{M-r}
+
+\ttfamily
+(dynamic-wind in (lambda () \cursor body) out)\\
+(dynamic-wind in \cursor body out)\\
+\cursor body
+\rmfamily
+
     \section*{Barfage \& Slurpage}
 
     \section*{Miscellaneous Commands}
