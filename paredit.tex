@@ -295,6 +295,40 @@ paredit-raise-sexp \texttt{M-r}
 
     \section*{Barfage \& Slurpage}
 
+paredit-forward-slurp-sexp \texttt{C-), C-<right>}
+
+\ttfamily
+(foo (bar \cursor baz) quux zot)\\
+(foo (bar \cursor baz quux) zot)
+
+(a b ((c\cursor{} d)) e f)\\
+(a b ((c\cursor{} d) e) f)
+\rmfamily
+
+paredit-forward-barf-sexp \texttt{C-\}, C-<left>}
+
+\ttfamily
+(foo (bar \cursor baz quux) zot)\\
+(foo (bar \cursor baz) quux zot)
+\rmfamily
+
+paredit-backward-slurp-sexp \texttt{C-(, C-M-<left>, ESC C-<left>}
+
+\ttfamily
+(foo bar (baz\cursor{} quux) zot)\\
+(foo (bar\cursor{} baz quux) zot)
+
+(a b ((c\cursor{} d)) e f)\\
+(a (b (c\cursor{} d) e) f)
+\rmfamily
+
+paredit-backward-barf-sexp \texttt{C-\{, C-M-<right>, ESC C-<right>}
+
+\ttfamily
+(foo (bar baz \cursor quux) zot)\\
+(foo bar (baz \cursor quux) zot)
+\rmfamily
+
     \section*{Miscellaneous Commands}
 
   \end{multicols}
