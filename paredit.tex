@@ -105,9 +105,11 @@ paredit-doublequote \texttt{"}
 paredit-meta-doublequote \texttt{M-"}
 
 \ttfamily
-(foo "bar \cursor baz" quux)\\
+\begin{nstabbing}
+(foo\={} "bar \cursor baz" quux)\\
 (foo "bar baz"\\
-\hspace*{3em}\cursor quux)
+\>\cursor quux)
+\end{nstabbing}
 
 (foo \cursor(bar \#\textbackslash x "baz \textbackslash\textbackslash{} quux") zot)\\
 (foo "\cursor(bar \#\textbackslash\textbackslash x \textbackslash"baz \textbackslash\textbackslash\textbackslash\textbackslash{} quux\textbackslash")" zot)
