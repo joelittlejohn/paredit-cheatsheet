@@ -44,68 +44,68 @@
 
 paredit-open-round \texttt{(}
 
-\ttfamily
+{\ttfamily
 (a b \cursor c d)\\
 (a b (\cursor) c d)
 
 (foo "bar \cursor baz" quux)\\
 (foo "bar (\cursor baz" quux)
-\rmfamily
+}
 
 paredit-close-round \texttt{)}
 
-\ttfamily
+{\ttfamily
 (a b \cursor c \space\space)\\
 (a b c)\cursor
 
 ; Hello,\cursor{} world\\
 ; Hello,)\cursor{} world
-\rmfamily
+}
 
 paredit-close-round-and-newline \texttt{M-)}
 
-\ttfamily
+{\ttfamily
 (defun f (x\cursor{} \space))\\
 (defun f (x\cursor{} \space)\\
 )
 
 ; (Foo.\cursor\\
 ; (Foo.\cursor
-\rmfamily
+}
 
 paredit-open-square \texttt{[}
 
-\ttfamily
+{\ttfamily
 (a b \cursor c d)\\
 (a b [\cursor] c d)
 
 (foo "bar \cursor baz" quux)\\
 (foo "bar [\cursor baz" quux)
-\rmfamily
+}
 
 paredit-close-square \texttt{]}
 
-\ttfamily
+{\ttfamily
 (define-key keymap [frob\cursor{} \space] 'frobnicate)\\
 (define-key keymap [frob]\cursor{} 'frobnicate)
 
 ; [Bar.\cursor\\
 ; [Bar.]\cursor
-\rmfamily
+}
 
 paredit-doublequote \texttt{"}
 
-\ttfamily
+{\ttfamily
 (frob grovel \cursor full lexical)\\
 (frob grovel "\cursor " full lexical)
 
 (foo "bar \cursor baz" quux)\\
 (foo "bar \textbackslash"\cursor baz" quux)
-\rmfamily
+}
 
 paredit-meta-doublequote \texttt{M-"}
 
-\ttfamily
+{\ttfamily
 \begin{nstabbing}
 (foo\={} "bar \cursor baz" quux)\\
 (foo "bar baz"\\
@@ -114,11 +114,11 @@ paredit-meta-doublequote \texttt{M-"}
 
 (foo \cursor(bar \#\textbackslash x "baz \textbackslash\textbackslash{} quux") zot)\\
 (foo "\cursor(bar \#\textbackslash\textbackslash x \textbackslash"baz \textbackslash\textbackslash\textbackslash\textbackslash{} quux\textbackslash")" zot)
-\rmfamily
+}
 
 paredit-backslash \texttt{\textbackslash}
 
-\ttfamily
+{\ttfamily
 (string \#\cursor)\\
 Escaping character... (x)\\
 (string \#\textbackslash x\cursor)
@@ -126,11 +126,11 @@ Escaping character... (x)\\
 "foo\cursor bar"\\
 Escaping character... (")\\
 "foo\textbackslash"\cursor bar"
-\rmfamily
+}
 
 paredit-comment-dwim \texttt{M-;}
 
-\ttfamily
+{\ttfamily
 \begin{nstabbing}
 (foo \cursor bar) \space ; baz \space \space \space \space \=\\
 (foo bar) \>; \cursor baz
@@ -144,11 +144,11 @@ paredit-comment-dwim \texttt{M-;}
 \cursor(defun hello-world ...)\\
 ;;; \cursor\\
 (defun hello-world ...)
-\rmfamily
+}
 
 paredit-newline \texttt{C-j}
 
-\ttfamily
+{\ttfamily
 \begin{nstabbing}
 (let ((n (frobbotz))) \cursor (display (+n 1)\\
 port))
@@ -160,13 +160,13 @@ port))
 \>\>
 port))
 \end{nstabbing}
-\rmfamily
+}
 
     \section*{Deleting \& Killing}
 
 paredit-forward-delete \texttt{C-d, <delete>, <deletechar>}
 
-\ttfamily
+{\ttfamily
 (quu\cursor{}x "zot")\\
 (quu\cursor{} "zot")
 
@@ -179,11 +179,11 @@ paredit-forward-delete \texttt{C-d, <delete>, <deletechar>}
 
 \cursor(foo bar)\\
 (\cursor foo bar)
-\rmfamily
+}
 
 paredit-backward-delete \texttt{DEL}
 
-\ttfamily
+{\ttfamily
 ("zot" q\cursor uux)\\
 ("zot" \cursor uux)
 
@@ -196,11 +196,11 @@ paredit-backward-delete \texttt{DEL}
 
 (foo bar)\cursor\\
 (foo bar\cursor)
-\rmfamily
+}
 
 paredit-kill \texttt{C-k}
 
-\ttfamily
+{\ttfamily
 (foo bar)\cursor \space \space \space ; Useless comment!\\
 (foo bar)\cursor
 
@@ -216,11 +216,11 @@ paredit-kill \texttt{C-k}
 (foo "\cursor"\\
 \>quux)
 \end{nstabbing}
-\rmfamily
+}
 
 paredit-forward-kill-word \texttt{M-d}
 
-\ttfamily
+{\ttfamily
 \cursor(foo bar) \space \space \space ; baz\\
 (\cursor{} bar) \space \space \space ; baz\\
 (\cursor) \space \space \space ; baz\\
@@ -232,103 +232,103 @@ paredit-forward-kill-word \texttt{M-d}
 (defun frobnicate ...)\\
 ;;;\\
 (\cursor{} frobnicate ...)
-\rmfamily
+}
 
     \section*{Movement \& Navigation}
 
 paredit-forward \texttt{C-M-f}
 
-\ttfamily
+{\ttfamily
 (foo \cursor(bar baz) quux)\\
 (foo (bar baz)\cursor{} quux)
 
 (foo (bar)\cursor)\\
 (foo (bar))\cursor
-\rmfamily
+}
 
 paredit-backward \texttt{C-M-b}
 
-\ttfamily
+{\ttfamily
 (foo (bar baz)\cursor{} quux)\\
 (foo \cursor(bar baz) quux)
 
 (\cursor(foo) bar)\\
 \cursor((foo) bar)
-\rmfamily
+}
 
     \section*{Depth-Changing Commands}
 
 paredit-wrap-around \texttt{M-(}
 
-\ttfamily
+{\ttfamily
 (foo \cursor bar baz)\\
 (foo (\cursor bar) baz)
-\rmfamily
+}
 
 paredit-splice-sexp \texttt{M-s}
 
-\ttfamily
+{\ttfamily
 (foo (bar\cursor{} baz) quux)\\
 (foo bar\cursor{} baz quux)
-\rmfamily
+}
 
 paredit-splice-sexp-killing-backward \texttt{M-<up>, ESC <up>}
 
-\ttfamily
+{\ttfamily
 (foo (let ((x 5)) \cursor(sqrt n)) bar)\\
 (foo \cursor(sqrt n) bar)
-\rmfamily
+}
 
 paredit-splice-sexp-killing-forward \texttt{M-<down>, ESC <down>}
 
-\ttfamily
+{\ttfamily
 (a (b c\cursor{} d e) f)\\
 (a b c\cursor{} f)
-\rmfamily
+}
 
 paredit-raise-sexp \texttt{M-r}
 
-\ttfamily
+{\ttfamily
 (dynamic-wind in (lambda () \cursor body) out)\\
 (dynamic-wind in \cursor body out)\\
 \cursor body
-\rmfamily
+}
 
     \section*{Barfage \& Slurpage}
 
 paredit-forward-slurp-sexp \texttt{C-), C-<right>}
 
-\ttfamily
+{\ttfamily
 (foo (bar \cursor baz) quux zot)\\
 (foo (bar \cursor baz quux) zot)
 
 (a b ((c\cursor{} d)) e f)\\
 (a b ((c\cursor{} d) e) f)
-\rmfamily
+}
 
 paredit-forward-barf-sexp \texttt{C-\}, C-<left>}
 
-\ttfamily
+{\ttfamily
 (foo (bar \cursor baz quux) zot)\\
 (foo (bar \cursor baz) quux zot)
-\rmfamily
+}
 
 paredit-backward-slurp-sexp \texttt{C-(, C-M-<left>, ESC C-<left>}
 
-\ttfamily
+{\ttfamily
 (foo bar (baz\cursor{} quux) zot)\\
 (foo (bar\cursor{} baz quux) zot)
 
 (a b ((c\cursor{} d)) e f)\\
 (a (b (c\cursor{} d) e) f)
-\rmfamily
+}
 
 paredit-backward-barf-sexp \texttt{C-\{, C-M-<right>, ESC C-<right>}
 
-\ttfamily
+{\ttfamily
 (foo (bar baz \cursor quux) zot)\\
 (foo bar (baz \cursor quux) zot)
-\rmfamily
+}
 
     \section*{Miscellaneous Commands}
 
