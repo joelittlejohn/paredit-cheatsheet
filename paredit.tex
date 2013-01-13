@@ -164,7 +164,7 @@ port))
 
     \section*{Deleting \& Killing}
 
-paredit-forward-delete \texttt{C-d, <delete>, <deletechar>}
+paredit-forward-delete \\\texttt{C-d, <delete>, <deletechar>}
 
 {\ttfamily
 (quu\cursor{}x "zot")\\
@@ -272,14 +272,14 @@ paredit-splice-sexp \texttt{M-s}
 (foo bar\cursor{} baz quux)
 }
 
-paredit-splice-sexp-killing-backward \texttt{M-<up>, ESC <up>}
+paredit-splice-sexp-killing-backward \\\texttt{M-<up>, ESC <up>}
 
 {\ttfamily
 (foo (let ((x 5)) \cursor(sqrt n)) bar)\\
 (foo \cursor(sqrt n) bar)
 }
 
-paredit-splice-sexp-killing-forward \texttt{M-<down>, ESC <down>}
+paredit-splice-sexp-killing-forward \\\texttt{M-<down>, ESC <down>}
 
 {\ttfamily
 (a (b c\cursor{} d e) f)\\
@@ -313,7 +313,7 @@ paredit-forward-barf-sexp \texttt{C-\}, C-<left>}
 (foo (bar \cursor baz) quux zot)
 }
 
-paredit-backward-slurp-sexp \texttt{C-(, C-M-<left>, ESC C-<left>}
+paredit-backward-slurp-sexp \\\texttt{C-(, C-M-<left>, ESC C-<left>}
 
 {\ttfamily
 (foo bar (baz\cursor{} quux) zot)\\
@@ -323,7 +323,7 @@ paredit-backward-slurp-sexp \texttt{C-(, C-M-<left>, ESC C-<left>}
 (a (b (c\cursor{} d) e) f)
 }
 
-paredit-backward-barf-sexp \texttt{C-\{, C-M-<right>, ESC C-<right>}
+paredit-backward-barf-sexp \\\texttt{C-\{, C-M-<right>, ESC C-<right>}
 
 {\ttfamily
 (foo (bar baz \cursor quux) zot)\\
