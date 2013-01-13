@@ -332,6 +332,42 @@ paredit-backward-barf-sexp \texttt{C-\{, C-M-<right>, ESC C-<right>}
 
     \section*{Miscellaneous Commands}
 
+paredit-split-sexp \texttt{M-S}
+
+{\ttfamily
+(hello\cursor{} world)\\
+(hello)\cursor{} (world)
+
+"Hello, \cursor world!"\\
+"Hello, "\cursor{} "world!"
+}
+
+paredit-join-sexp \texttt{M-J}
+
+{\ttfamily
+(hello)\cursor{} (world)\\
+(hello\cursor{} world)
+
+"Hello, "\cursor{} "world!"\\
+"Hello, \cursor world!"
+
+hello-\\
+\cursor \space \space world\\
+hello-\cursor world
+}
+
+paredit-retcentre-on-sexp \texttt{C-c C-M-l}
+
+{\ttfamily
+No examples
+}
+
+paredit-retindent-defun \texttt{M-q}
+
+{\ttfamily
+No examples
+}
+
   \end{multicols}
 
 \end{document}
