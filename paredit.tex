@@ -7,13 +7,13 @@
 %
 % http://www.emacswiki.org/FDL
 
-\documentclass[8pt,landscape,a4paper]{article}
+\documentclass[10pt,landscape,a4paper]{article}
 
 \usepackage{extsizes}
 \usepackage[utf8]{inputenc}
-\usepackage[landscape,a4paper,margin=0.6cm]{geometry}
+\usepackage[landscape,a4paper,margin=0.5cm]{geometry}
 \usepackage{multicol}
-\usepackage[compact]{titlesec}
+\usepackage{titlesec}
 \usepackage{courier}
 \usepackage{color}
 \usepackage[usenames]{xcolor}
@@ -21,7 +21,8 @@
 \title{Paredit Cheatsheet}
 
 % remove paragraph indent and compress spacing
-\titlespacing{\section}{0cm}{*1}{*1}
+\titleformat{\section}{\normalfont\bfseries}{\thesection}{0em}{}
+\titlespacing{\section}{0em}{0.5em}{0.5em}
 \setlength{\parskip}{0.1cm plus1mm minus1mm}
 \setlength{\parindent}{0cm}
 
@@ -32,15 +33,21 @@
    \tabbing}
   {\endtabbing}
 
+% reduce font size for code examples slightly
+\let\oldtt\ttfamily \def\ttfamily{\oldtt\small}
+
+% remove page numbering
+\pagenumbering{gobble}
+
 \begin{document}
 
   \newcommand{\cursor}{\texttt{\textcolor{red}{\textbf{|}}}}
 
   \begin{multicols}{4}
 
-    \section*{\LARGE{Paredit Cheatsheet}}
+    \section*{\Large{Paredit Cheatsheet}}
 
-    \section*{Basic Insertion Commands}
+    \section*{\large{Basic Insertion Commands}}
 
 paredit-open-round \texttt{(}
 
@@ -162,7 +169,7 @@ port))
 \end{nstabbing}
 }
 
-    \section*{Deleting \& Killing}
+    \section*{\large{Deleting \& Killing}}
 
 paredit-forward-delete \\\texttt{C-d, <delete>, <deletechar>}
 
@@ -234,7 +241,7 @@ paredit-forward-kill-word \texttt{M-d}
 (\cursor{} frobnicate ...)
 }
 
-    \section*{Movement \& Navigation}
+    \section*{\large{Movement \& Navigation}}
 
 paredit-forward \texttt{C-M-f}
 
@@ -256,7 +263,7 @@ paredit-backward \texttt{C-M-b}
 \cursor((foo) bar)
 }
 
-    \section*{Depth-Changing Commands}
+    \section*{\large{Depth-Changing Commands}}
 
 paredit-wrap-around \texttt{M-(}
 
@@ -294,7 +301,7 @@ paredit-raise-sexp \texttt{M-r}
 \cursor body
 }
 
-    \section*{Barfage \& Slurpage}
+    \section*{\large{Barfage \& Slurpage}}
 
 paredit-forward-slurp-sexp \texttt{C-), C-<right>}
 
@@ -330,7 +337,7 @@ paredit-backward-barf-sexp \\\texttt{C-\{, C-M-<right>, ESC C-<right>}
 (foo bar (baz \cursor quux) zot)
 }
 
-    \section*{Miscellaneous Commands}
+    \section*{\large{Miscellaneous Commands}}
 
 paredit-split-sexp \texttt{M-S}
 
