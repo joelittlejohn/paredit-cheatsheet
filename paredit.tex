@@ -22,7 +22,7 @@
 
 % remove paragraph indent and compress spacing
 \titleformat{\section}{\normalfont\bfseries}{\thesection}{0em}{}
-\titlespacing{\section}{0em}{0.5em}{0.5em}
+\titlespacing{\section}{0em}{0.8em}{0.5em}
 \setlength{\parskip}{0.1cm plus1mm minus1mm}
 \setlength{\parindent}{0cm}
 
@@ -49,7 +49,7 @@
 
     \section*{\large{Basic Insertion Commands}}
 
-paredit-open-round \texttt{(}
+\textbf{paredit-open-round} \texttt{(}
 
 {\ttfamily
 (a b \cursor c d)\\
@@ -59,7 +59,7 @@ paredit-open-round \texttt{(}
 (foo "bar (\cursor baz" quux)
 }
 
-paredit-close-round \texttt{)}
+\textbf{paredit-close-round} \texttt{)}
 
 {\ttfamily
 (a b \cursor c \space\space)\\
@@ -69,7 +69,7 @@ paredit-close-round \texttt{)}
 ; Hello,)\cursor{} world
 }
 
-paredit-close-round-and-newline \texttt{M-)}
+\textbf{paredit-close-round-and-newline} \texttt{M-)}
 
 {\ttfamily
 (defun f (x\cursor{} \space))\\
@@ -80,7 +80,7 @@ paredit-close-round-and-newline \texttt{M-)}
 ; (Foo.\cursor
 }
 
-paredit-open-square \texttt{[}
+\textbf{paredit-open-square} \texttt{[}
 
 {\ttfamily
 (a b \cursor c d)\\
@@ -90,7 +90,7 @@ paredit-open-square \texttt{[}
 (foo "bar [\cursor baz" quux)
 }
 
-paredit-close-square \texttt{]}
+\textbf{paredit-close-square} \texttt{]}
 
 {\ttfamily
 (define-key keymap [frob\cursor{} \space] 'frobnicate)\\
@@ -100,7 +100,7 @@ paredit-close-square \texttt{]}
 ; [Bar.]\cursor
 }
 
-paredit-doublequote \texttt{"}
+\textbf{paredit-doublequote} \texttt{"}
 
 {\ttfamily
 (frob grovel \cursor full lexical)\\
@@ -110,7 +110,7 @@ paredit-doublequote \texttt{"}
 (foo "bar \textbackslash"\cursor baz" quux)
 }
 
-paredit-meta-doublequote \texttt{M-"}
+\textbf{paredit-meta-doublequote} \texttt{M-"}
 
 {\ttfamily
 \begin{nstabbing}
@@ -123,7 +123,7 @@ paredit-meta-doublequote \texttt{M-"}
 (foo "\cursor(bar \#\textbackslash\textbackslash x \textbackslash"baz \textbackslash\textbackslash\textbackslash\textbackslash{} quux\textbackslash")" zot)
 }
 
-paredit-backslash \texttt{\textbackslash}
+\textbf{paredit-backslash} \texttt{\textbackslash}
 
 {\ttfamily
 (string \#\cursor)\\
@@ -135,7 +135,7 @@ Escaping character... (")\\
 "foo\textbackslash"\cursor bar"
 }
 
-paredit-comment-dwim \texttt{M-;}
+\textbf{paredit-comment-dwim} \texttt{M-;}
 
 {\ttfamily
 \begin{nstabbing}
@@ -153,7 +153,7 @@ paredit-comment-dwim \texttt{M-;}
 (defun hello-world ...)
 }
 
-paredit-newline \texttt{C-j}
+\textbf{paredit-newline} \texttt{C-j}
 
 {\ttfamily
 \begin{nstabbing}
@@ -171,7 +171,7 @@ port))
 
     \section*{\large{Deleting \& Killing}}
 
-paredit-forward-delete \\\texttt{C-d, <delete>, <deletechar>}
+\textbf{paredit-forward-delete} \\\texttt{C-d, <delete>, <deletechar>}
 
 {\ttfamily
 (quu\cursor{}x "zot")\\
@@ -188,7 +188,7 @@ paredit-forward-delete \\\texttt{C-d, <delete>, <deletechar>}
 (\cursor foo bar)
 }
 
-paredit-backward-delete \texttt{DEL}
+\textbf{paredit-backward-delete} \texttt{DEL}
 
 {\ttfamily
 ("zot" q\cursor uux)\\
@@ -205,7 +205,7 @@ paredit-backward-delete \texttt{DEL}
 (foo bar\cursor)
 }
 
-paredit-kill \texttt{C-k}
+\textbf{paredit-kill} \texttt{C-k}
 
 {\ttfamily
 (foo bar)\cursor \space \space \space ; Useless comment!\\
@@ -225,7 +225,7 @@ paredit-kill \texttt{C-k}
 \end{nstabbing}
 }
 
-paredit-forward-kill-word \texttt{M-d}
+\textbf{paredit-forward-kill-word} \texttt{M-d}
 
 {\ttfamily
 \cursor(foo bar) \space \space \space ; baz\\
@@ -243,7 +243,7 @@ paredit-forward-kill-word \texttt{M-d}
 
     \section*{\large{Movement \& Navigation}}
 
-paredit-forward \texttt{C-M-f}
+\textbf{paredit-forward} \texttt{C-M-f}
 
 {\ttfamily
 (foo \cursor(bar baz) quux)\\
@@ -253,7 +253,7 @@ paredit-forward \texttt{C-M-f}
 (foo (bar))\cursor
 }
 
-paredit-backward \texttt{C-M-b}
+\textbf{paredit-backward} \texttt{C-M-b}
 
 {\ttfamily
 (foo (bar baz)\cursor{} quux)\\
@@ -265,35 +265,35 @@ paredit-backward \texttt{C-M-b}
 
     \section*{\large{Depth-Changing Commands}}
 
-paredit-wrap-around \texttt{M-(}
+\textbf{paredit-wrap-around} \texttt{M-(}
 
 {\ttfamily
 (foo \cursor bar baz)\\
 (foo (\cursor bar) baz)
 }
 
-paredit-splice-sexp \texttt{M-s}
+\textbf{paredit-splice-sexp} \texttt{M-s}
 
 {\ttfamily
 (foo (bar\cursor{} baz) quux)\\
 (foo bar\cursor{} baz quux)
 }
 
-paredit-splice-sexp-killing-backward \\\texttt{M-<up>, ESC <up>}
+\textbf{paredit-splice-sexp-killing-backward} \\\texttt{M-<up>, ESC <up>}
 
 {\ttfamily
 (foo (let ((x 5)) \cursor(sqrt n)) bar)\\
 (foo \cursor(sqrt n) bar)
 }
 
-paredit-splice-sexp-killing-forward \\\texttt{M-<down>, ESC <down>}
+\textbf{paredit-splice-sexp-killing-forward} \\\texttt{M-<down>, ESC <down>}
 
 {\ttfamily
 (a (b c\cursor{} d e) f)\\
 (a b c\cursor{} f)
 }
 
-paredit-raise-sexp \texttt{M-r}
+\textbf{paredit-raise-sexp} \texttt{M-r}
 
 {\ttfamily
 (dynamic-wind in (lambda () \cursor body) out)\\
@@ -303,7 +303,7 @@ paredit-raise-sexp \texttt{M-r}
 
     \section*{\large{Barfage \& Slurpage}}
 
-paredit-forward-slurp-sexp \texttt{C-), C-<right>}
+\textbf{paredit-forward-slurp-sexp} \\\texttt{C-), C-<right>}
 
 {\ttfamily
 (foo (bar \cursor baz) quux zot)\\
@@ -313,14 +313,14 @@ paredit-forward-slurp-sexp \texttt{C-), C-<right>}
 (a b ((c\cursor{} d) e) f)
 }
 
-paredit-forward-barf-sexp \texttt{C-\}, C-<left>}
+\textbf{paredit-forward-barf-sexp} \\\texttt{C-\}, C-<left>}
 
 {\ttfamily
 (foo (bar \cursor baz quux) zot)\\
 (foo (bar \cursor baz) quux zot)
 }
 
-paredit-backward-slurp-sexp \\\texttt{C-(, C-M-<left>, ESC C-<left>}
+\textbf{paredit-backward-slurp-sexp} \\\texttt{C-(, C-M-<left>, ESC C-<left>}
 
 {\ttfamily
 (foo bar (baz\cursor{} quux) zot)\\
@@ -330,7 +330,7 @@ paredit-backward-slurp-sexp \\\texttt{C-(, C-M-<left>, ESC C-<left>}
 (a (b (c\cursor{} d) e) f)
 }
 
-paredit-backward-barf-sexp \\\texttt{C-\{, C-M-<right>, ESC C-<right>}
+\textbf{paredit-backward-barf-sexp} \\\texttt{C-\{, C-M-<right>, ESC C-<right>}
 
 {\ttfamily
 (foo (bar baz \cursor quux) zot)\\
@@ -339,7 +339,7 @@ paredit-backward-barf-sexp \\\texttt{C-\{, C-M-<right>, ESC C-<right>}
 
     \section*{\large{Miscellaneous Commands}}
 
-paredit-split-sexp \texttt{M-S}
+\textbf{paredit-split-sexp} \texttt{M-S}
 
 {\ttfamily
 (hello\cursor{} world)\\
@@ -349,7 +349,7 @@ paredit-split-sexp \texttt{M-S}
 "Hello, "\cursor{} "world!"
 }
 
-paredit-join-sexp \texttt{M-J}
+\textbf{paredit-join-sexp} \texttt{M-J}
 
 {\ttfamily
 (hello)\cursor{} (world)\\
@@ -363,13 +363,13 @@ hello-\\
 hello-\cursor world
 }
 
-paredit-retcentre-on-sexp \texttt{C-c C-M-l}
+\textbf{paredit-retcentre-on-sexp} \texttt{C-c C-M-l}
 
 {\ttfamily
 No examples
 }
 
-paredit-retindent-defun \texttt{M-q}
+\textbf{paredit-retindent-defun} \texttt{M-q}
 
 {\ttfamily
 No examples
