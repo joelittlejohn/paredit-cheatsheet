@@ -2,6 +2,9 @@
 
 An attempt to create a new, scalable source document for the Paredit Cheatsheet available as a png at http://www.emacswiki.org/emacs/PareditCheatsheet.
 
+[Download the pdf](https://github.com/joelittlejohn/paredit-cheatsheet/raw/master/paredit.pdf).
+
+
 To re-generate the document from its LaTeX source, [install TeX Live](http://www.tug.org/texlive/acquire-netinstall.html) then:
 
 ```bash
