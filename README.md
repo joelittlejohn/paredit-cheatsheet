@@ -1,8 +1,10 @@
 # Introduction
 
-An attempt to create a new, scalable source document for the Paredit Cheatsheet available as a png at http://www.emacswiki.org/emacs/PareditCheatsheet.
+An attempt to create a new, scalable source document for the Paredit Cheatsheet available as a png at the Emacs Wiki.
 
-[Download the pdf](https://github.com/joelittlejohn/paredit-cheatsheet/raw/master/paredit.pdf).
+**[Download the pdf](https://github.com/joelittlejohn/paredit-cheatsheet/raw/master/paredit.pdf)**
+
+[Download the svg](https://github.com/joelittlejohn/paredit-cheatsheet/raw/master/paredit.svg)
 
 
 To re-generate the document from its LaTeX source, [install TeX Live](http://www.tug.org/texlive/acquire-netinstall.html) then:
