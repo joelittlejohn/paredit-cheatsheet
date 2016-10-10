@@ -1,6 +1,6 @@
 # Introduction
 
-An attempt to create a new, scalable source document for the Paredit Cheatsheet available as a png at the Emacs Wiki.
+An attempt to create a new, scalable source document for the popular Paredit Cheatsheet (the one that's available as a png at the Emacs Wiki).
 
 **[Download the pdf](https://github.com/joelittlejohn/paredit-cheatsheet/raw/master/paredit.pdf)**
 
